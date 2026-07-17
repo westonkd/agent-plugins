@@ -1,6 +1,5 @@
 # agent-plugins
 
-A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces).
 A catalog of plugins you can add to Claude Code and install individually.
 
 ## Plugins

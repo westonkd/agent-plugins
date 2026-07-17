@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "canvas-lms-api",
+  "description": "Subject-matter expert on the Canvas LMS REST API. Ships a progressive-disclosure skill covering all 142 API resource groups (~1,078 endpoints), object models, and conceptual guides (auth, pagination, SIS imports, LTI, Live Events, RBAC permissions).",
+  "version": "1.0.0",
+  "author": {
+    "name": "wdrans"
+  },
+  "license": "AGPL-3.0-only",
+  "keywords": ["canvas", "lms", "instructure", "rest-api", "education", "sis", "lti"]
+}

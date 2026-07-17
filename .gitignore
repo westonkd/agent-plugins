@@ -1,0 +1,7 @@
+# Raw Canvas Swagger documentation dump — build-time source input only.
+# The distributable plugin ships the generated reference/, not this large source.
+plugins/canvas-lms-api/doc/
+
+# Python
+__pycache__/
+*.pyc

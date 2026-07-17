@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "agent-plugins",
+  "owner": {
+    "name": "wdrans",
+    "email": "wdrans@gmail.com"
+  },
+  "description": "A marketplace of Claude Code plugins, starting with a Canvas LMS REST API subject-matter expert.",
+  "plugins": [
+    {
+      "name": "canvas-lms-api",
+      "source": "./plugins/canvas-lms-api",
+      "description": "Subject-matter expert on the Canvas LMS REST API: 142 resources, ~1,078 endpoints, object models, plus guides for auth, pagination, SIS imports, LTI, Live Events, and RBAC permissions.",
+      "version": "1.0.0",
+      "author": {
+        "name": "wdrans"
+      },
+      "license": "AGPL-3.0-only",
+      "keywords": ["canvas", "lms", "instructure", "rest-api", "education", "sis", "lti"],
+      "category": "reference"
+    }
+  ]
+}

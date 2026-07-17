@@ -1,0 +1,46 @@
+canvas-lms-api (Claude Code plugin)
+===================================
+
+This plugin distributes documentation derived from Canvas LMS, an
+open-source learning management system published by Instructure, Inc.
+
+Upstream source
+---------------
+Canvas LMS — https://github.com/instructure/canvas-lms
+Copyright (C) Instructure, Inc.
+Licensed under the GNU Affero General Public License, version 3 (AGPL-3.0).
+
+Derived content
+---------------
+The files under:
+
+    skills/canvas-lms-api/reference/
+
+are generated from the Canvas LMS REST API documentation (the Swagger/JSON
+API definitions and the accompanying prose guides) that Canvas produces from
+the instructure/canvas-lms source tree. The generator script
+(scripts/build_reference.py) extracts and reorganizes that documentation into
+Markdown for progressive-disclosure consumption; the substantive content —
+endpoint descriptions, parameters, object models, conceptual guides, and
+permission descriptions — originates with Canvas LMS and remains the
+copyright of Instructure, Inc.
+
+The raw upstream snapshot used as the build input lives under `doc/` and is
+intentionally excluded from version control (see .gitignore); only the
+generated `reference/` is committed and distributed.
+
+License
+-------
+Because this plugin incorporates and redistributes AGPL-3.0 licensed material
+from Canvas LMS, the plugin as a whole — including the original build tooling
+(scripts/build_reference.py) and the skill entrypoint
+(skills/canvas-lms-api/SKILL.md) authored for this project — is distributed
+under the GNU Affero General Public License, version 3. The full license text
+is in the LICENSE file in this directory.
+
+This plugin is an independent project and is not affiliated with, endorsed by,
+or sponsored by Instructure, Inc. "Canvas" and "Canvas LMS" are trademarks of
+Instructure, Inc.; they are used here only to identify the software this
+documentation describes.
+
+This NOTICE is provided for attribution and is not legal advice.

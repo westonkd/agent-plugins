@@ -1,5 +1,7 @@
 # agent-plugins
 
+[![Validate plugins](https://github.com/westonkd/agent-plugins/actions/workflows/validate-plugins.yml/badge.svg)](https://github.com/westonkd/agent-plugins/actions/workflows/validate-plugins.yml)
+
 A catalog of plugins you can add to Claude Code and install individually.
 
 ## Plugins
@@ -7,6 +9,7 @@ A catalog of plugins you can add to Claude Code and install individually.
 | Plugin | Description |
 | --- | --- |
 | [`canvas-lms-api`](plugins/canvas-lms-api) | Subject-matter expert on the Canvas LMS REST API — all 142 resource groups (~1,078 endpoints), object models, and guides for auth, pagination, SIS imports, LTI, Live Events, and RBAC permissions. |
+| [`no-comment`](plugins/no-comment) | Write comment-free code — no line/block comments, docstrings, TODOs, or banners, with narrow exceptions for functional directives and pragmas. A `SessionStart` hook loads the rules automatically each session. |
 
 ## Install
 
@@ -32,7 +35,9 @@ Refresh later with `/plugin marketplace update agent-plugins`.
 .claude-plugin/marketplace.json      Marketplace catalog (lists the plugins)
 plugins/<plugin>/                     One directory per plugin
   .claude-plugin/plugin.json          Plugin manifest
-  skills/, scripts/, …                Plugin content
+  skills/, hooks/, scripts/, …        Plugin content
+scripts/validate_plugins.py           Structure validator (used by CI)
+.github/workflows/                    CI
 ```
 
 Each plugin ships its own generated content committed to the repo, so installs
@@ -46,5 +51,7 @@ material, a `NOTICE` with attribution. The `canvas-lms-api` plugin is
 Canvas LMS documentation ([instructure/canvas-lms](https://github.com/instructure/canvas-lms),
 © Instructure, Inc.); see
 [`plugins/canvas-lms-api/LICENSE`](plugins/canvas-lms-api/LICENSE) and
-[`plugins/canvas-lms-api/NOTICE`](plugins/canvas-lms-api/NOTICE).
+[`plugins/canvas-lms-api/NOTICE`](plugins/canvas-lms-api/NOTICE). The
+`no-comment` plugin is original content and is **MIT** licensed; see
+[`plugins/no-comment/LICENSE`](plugins/no-comment/LICENSE).
 

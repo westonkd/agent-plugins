@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "no-comment",
+  "description": "Makes the agent write comment-free code: no line/block comments, docstrings, TODOs, or banners, with narrow exceptions for functional directives and pragmas. A SessionStart hook loads the rules automatically each session.",
+  "version": "1.1.0",
+  "author": {
+    "name": "wdrans"
+  },
+  "license": "MIT",
+  "keywords": ["code-style", "comments", "clean-code", "conventions"]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Load the no-comment rules into context at the start of every session",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/load-skill.sh",
+            "args": [],
+            "timeout": 5,
+            "statusMessage": "Loading no-comment rules"
+          }
+        ]
+      }
+    ]
+  }
+}

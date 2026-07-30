@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "project-skill-init",
+  "description": "Scaffolds a new project-context skill (SKILL.md, a living PRD, a DESIGN stub, and an append-only ADR log with its own generator script) into any repository, following the pattern used by instructure-hosted-agents' hosted-agents skill.",
+  "version": "1.0.0",
+  "author": {
+    "name": "wdrans"
+  },
+  "license": "MIT",
+  "keywords": ["skill-authoring", "adr", "prd", "documentation", "scaffolding", "meta-skill"]
+}

@@ -5,7 +5,7 @@
     "name": "wdrans",
     "email": "wdrans@gmail.com"
   },
-  "description": "A marketplace of Claude Code plugins: a Canvas LMS REST API subject-matter expert and a comment-free code style skill.",
+  "description": "A marketplace of Claude Code plugins: a Canvas LMS REST API subject-matter expert, a comment-free code style skill, and a meta-skill that scaffolds project-context skills.",
   "plugins": [
     {
       "name": "canvas-lms-api",
@@ -29,6 +29,18 @@
       },
       "license": "MIT",
       "keywords": ["code-style", "comments", "clean-code", "conventions"],
+      "category": "productivity"
+    },
+    {
+      "name": "project-skill-init",
+      "source": "./plugins/project-skill-init",
+      "description": "Scaffolds a new project-context skill (SKILL.md, a living PRD, a DESIGN stub, and an append-only ADR log with its own generator script) into any repository, following the pattern used by instructure-hosted-agents' hosted-agents skill.",
+      "version": "1.0.0",
+      "author": {
+        "name": "wdrans"
+      },
+      "license": "MIT",
+      "keywords": ["skill-authoring", "adr", "prd", "documentation", "scaffolding", "meta-skill"],
       "category": "productivity"
     }
   ]

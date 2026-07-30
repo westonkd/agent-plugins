@@ -48,8 +48,18 @@ if [[ "$description" =~ :[[:space:]] ]]; then
   exit 1
 fi
 
+if [[ ${#description} -gt 1024 ]]; then
+  echo "error: <description> is ${#description} characters; the Agent Skills spec caps it at 1024" >&2
+  exit 1
+fi
+
 if [[ ! "$skill_name" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
   echo "error: '$skill_name' is not a valid skill name; use lowercase letters, digits, and hyphens only (e.g. 'billing-redesign')" >&2
+  exit 1
+fi
+
+if [[ ${#skill_name} -gt 64 ]]; then
+  echo "error: '$skill_name' is ${#skill_name} characters; the Agent Skills spec caps skill names at 64" >&2
   exit 1
 fi
 
@@ -59,7 +69,7 @@ if [[ ! -d "$target_dir" ]]; then
 fi
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-templates_dir="$script_dir/../templates"
+assets_dir="$script_dir/../assets"
 target_dir="$(cd "$target_dir" && pwd)"
 skill_root="$target_dir/.claude/skills/$skill_name"
 
@@ -83,11 +93,11 @@ render() {
 
 mkdir -p "$skill_root/references/ADR" "$skill_root/scripts"
 
-render "$templates_dir/SKILL.md.tmpl" "$skill_root/SKILL.md"
-render "$templates_dir/PRD.md.tmpl" "$skill_root/references/PRD.md"
-render "$templates_dir/DESIGN.md.tmpl" "$skill_root/references/DESIGN.md"
+render "$assets_dir/SKILL.md.tmpl" "$skill_root/SKILL.md"
+render "$assets_dir/PRD.md.tmpl" "$skill_root/references/PRD.md"
+render "$assets_dir/DESIGN.md.tmpl" "$skill_root/references/DESIGN.md"
 
-cp "$templates_dir/new_adr.sh" "$skill_root/scripts/new_adr.sh"
+cp "$assets_dir/new_adr.sh" "$skill_root/scripts/new_adr.sh"
 chmod +x "$skill_root/scripts/new_adr.sh"
 
 echo "$skill_root"

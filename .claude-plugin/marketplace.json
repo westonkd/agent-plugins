@@ -8,6 +8,18 @@
   "description": "A marketplace of Claude Code plugins: a Canvas LMS REST API subject-matter expert, a comment-free code style skill, and a meta-skill that scaffolds project-context skills.",
   "plugins": [
     {
+      "name": "no-ai-prose",
+      "source": "./plugins/no-ai-prose",
+      "description": "Instructs agents to write prose without AI-telltale patterns: no em-dashes for drama, no filler openers, no transition-word inflation, and terse responses that omit scaffolding without sacrificing content.",
+      "version": "1.0.0",
+      "author": {
+        "name": "wdrans"
+      },
+      "license": "MIT",
+      "keywords": ["writing-style", "prose", "ai-patterns", "clean-writing", "conventions"],
+      "category": "code-style"
+    },
+    {
       "name": "canvas-lms-api",
       "source": "./plugins/canvas-lms-api",
       "description": "Subject-matter expert on the Canvas LMS REST API: 142 resources, ~1,078 endpoints, object models, plus guides for auth, pagination, SIS imports, LTI, Live Events, and RBAC permissions.",

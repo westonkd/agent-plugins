@@ -9,6 +9,7 @@ A catalog of plugins you can add to Claude Code and install individually.
 | Plugin | Description |
 | --- | --- |
 | [`canvas-lms-api`](plugins/canvas-lms-api) | Subject-matter expert on the Canvas LMS REST API — all 142 resource groups (~1,078 endpoints), object models, and guides for auth, pagination, SIS imports, LTI, Live Events, and RBAC permissions. |
+| [`no-ai-prose`](plugins/no-ai-prose) | Write prose without AI-telltale patterns: no em-dashes for drama, no filler openers, no transition-word inflation, no trailing offers to help. A `SessionStart` hook loads the rules automatically each session. |
 | [`no-comment`](plugins/no-comment) | Write comment-free code — no line/block comments, docstrings, TODOs, or banners, with narrow exceptions for functional directives and pragmas. A `SessionStart` hook loads the rules automatically each session. |
 | [`project-skill-init`](plugins/project-skill-init) | Scaffolds a new project-context skill — `SKILL.md`, a living PRD, a `DESIGN.md` stub, and an append-only ADR log with its own generator script — into any repository. |
 
@@ -52,8 +53,8 @@ material, a `NOTICE` with attribution. The `canvas-lms-api` plugin is
 Canvas LMS documentation ([instructure/canvas-lms](https://github.com/instructure/canvas-lms),
 © Instructure, Inc.); see
 [`plugins/canvas-lms-api/LICENSE`](plugins/canvas-lms-api/LICENSE) and
-[`plugins/canvas-lms-api/NOTICE`](plugins/canvas-lms-api/NOTICE). The
-`no-comment` and `project-skill-init` plugins are original content and are
-**MIT** licensed; see [`plugins/no-comment/LICENSE`](plugins/no-comment/LICENSE)
+[`plugins/canvas-lms-api/NOTICE`](plugins/canvas-lms-api/NOTICE). The `no-comment`, `no-ai-prose`, and `project-skill-init` plugins are original content and are
+**MIT** licensed; see [`plugins/no-comment/LICENSE`](plugins/no-comment/LICENSE),
+[`plugins/no-ai-prose/LICENSE`](plugins/no-ai-prose/LICENSE),
 and [`plugins/project-skill-init/LICENSE`](plugins/project-skill-init/LICENSE).
 

@@ -96,6 +96,7 @@ mkdir -p "$skill_root/references/ADR" "$skill_root/scripts"
 render "$assets_dir/SKILL.md.tmpl" "$skill_root/SKILL.md"
 render "$assets_dir/PRD.md.tmpl" "$skill_root/references/PRD.md"
 render "$assets_dir/DESIGN.md.tmpl" "$skill_root/references/DESIGN.md"
+render "$assets_dir/ADR_INDEX.md.tmpl" "$skill_root/references/ADR/ADR_INDEX.md"
 
 cp "$assets_dir/new_adr.sh" "$skill_root/scripts/new_adr.sh"
 chmod +x "$skill_root/scripts/new_adr.sh"

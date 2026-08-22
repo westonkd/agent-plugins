@@ -54,4 +54,9 @@ cat > "$filepath" <<EOF
 <!-- What becomes easier or harder as a result? What follow-up work does this create? -->
 EOF
 
+index_file="$adr_dir/ADR_INDEX.md"
+if [[ -f "$index_file" ]]; then
+  echo "| [${filename}](./${filename}) | ${title} |" >> "$index_file"
+fi
+
 echo "$filepath"

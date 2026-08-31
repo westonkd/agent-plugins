@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "destiny-2-builds",
+  "version": "1.0.0",
+  "description": "Destiny 2 build and loadout optimization backed by measured in-game values: subclass keywords, fragments, aspects, armor mods, set bonuses, artifact perks, exotic armor and weapons, stat tiers, and combatant data.",
+  "author": {
+    "name": "wdrans"
+  },
+  "repository": "https://github.com/westonkd/agent-plugins",
+  "license": "MIT",
+  "keywords": ["destiny-2", "gaming", "build-optimization", "loadout", "reference"]
+}

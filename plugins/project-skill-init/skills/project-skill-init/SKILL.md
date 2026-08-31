@@ -45,6 +45,11 @@ history.
    .claude/skills/<skill-name>/scripts/new_adr.sh "Title of the decision"
    ```
 
+   The script creates the ADR file and automatically appends a one-line entry to
+   `references/ADR/ADR_INDEX.md`, so the index stays current without any extra work.
+   Read `ADR_INDEX.md` first when you need a quick overview of all decisions made so
+   far — it lets you find the relevant ADR file without opening each one.
+
 ## References
 
 - [references/pattern.md](references/pattern.md) — the rationale behind the PRD/DESIGN/ADR

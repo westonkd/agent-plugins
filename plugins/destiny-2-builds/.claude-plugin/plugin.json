@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "destiny-2-builds",
+  "description": "Destiny 2 build and loadout optimization backed by measured in-game values: subclass keywords, fragments, aspects, armor mods, set bonuses, artifact perks, exotic armor and weapons, stat tiers, and combatant data.",
+  "version": "1.0.0",
+  "author": {
+    "name": "wdrans"
+  },
+  "license": "MIT",
+  "keywords": ["destiny-2", "gaming", "build-optimization", "loadout", "reference"]
+}

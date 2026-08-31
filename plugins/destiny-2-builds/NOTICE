@@ -1,0 +1,16 @@
+This plugin redistributes data derived from the Destiny Data Compendium, a
+community-maintained spreadsheet of measured Destiny 2 values:
+
+    https://docs.google.com/spreadsheets/d/1WaxvbLx7UoSZaBqdFr1u32F2uWVLo-CJunJB4nlGUE4/edit
+
+Everything under skills/destiny-2-builds/references/ is generated from that
+spreadsheet by scripts/build_reference.py. The compendium is the work of its
+authors and contributors, who retain all rights to it; it is reproduced here in
+reorganized form for reference use, with attribution, and is not sold or
+presented as original work.
+
+Destiny 2 is a trademark of Bungie, Inc. This plugin is unofficial and is not
+affiliated with or endorsed by Bungie.
+
+The plugin's own code and prose (plugin.json, README.md, SKILL.md, and
+scripts/build_reference.py) are MIT licensed; see LICENSE.

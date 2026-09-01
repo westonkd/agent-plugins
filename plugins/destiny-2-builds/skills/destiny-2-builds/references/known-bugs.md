@@ -146,7 +146,7 @@ chain on the Lockset: the boss ignites, which ignites the adjacent Lockset segme
 through stacked Scorch, which ignites back. It one-phases the encounter with the
 player behind cover, which makes it a solo AFK farm for Sundered Doctrine loot.
 This is a build interaction rather than a geometry exploit, so the fragment and perk
-values in `subclasses/solar.md` and `artifact-perks.md` apply as written.
+values in `subclasses/solar.md` and `artifact-perks/` apply as written.
 
 ## Live, but working against you
 
@@ -158,7 +158,7 @@ Do not credit them in a build.
 - **Wraithmetal Mail** (Hunter exotic) grants no Class stat, contrary to its
   description. `armor/exotics/hunter.md`
 - **Iron Lord's Vigor** (artifact perk) grants no damage resistance, contrary to
-  its description. `artifact-perks.md`
+  its description. `artifact-perks/`
 - **Spark of Frequency**'s tooltip claims it increases the fragment's effects; it
   does not, at least for the reload bonuses. `subclasses/arc.md`
 - **Hypercritical** (activity modifier) does not decrease damage despite stating

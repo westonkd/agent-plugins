@@ -56,7 +56,8 @@ Mods, set bonuses, exotic armor, and exotic class item perks.
 - `armor/set-bonuses.md` — 2-piece and 4-piece bonuses for every armor set. (56 entries, 34 KB)
 - `armor/mods.md` — Helmet, arms, chest, legs, and class item mods with energy costs, plus raid and activity mods. (128 entries, 22 KB)
   - Sections: Helmet · Arms · Chest · Legs · Class Item · Raid-Specific · Raid Specific · Activity or Destination Specific
-- `armor/exotic-class-items.md` — Every Spirit of ... perk available on exotic class items, by class. (36 entries, 10 KB)
+- `armor/exotic-class-items/first-perk-column.md` — First Perk Column. Spirit of ... perks in this column of the exotic class item, by class. (18 entries, 5 KB)
+- `armor/exotic-class-items/second-perk-column.md` — Second Perk Column. Spirit of ... perks in this column of the exotic class item, by class. (18 entries, 5 KB)
 - `armor/exotics/hunter.md` — Hunter. Every exotic armor piece and its exotic perk, by class. (46 entries, 24 KB)
   - Sections: Hunter · Aeon Sects
 - `armor/exotics/titan.md` — Titan. Every exotic armor piece and its exotic perk, by class. (46 entries, 28 KB)
@@ -66,9 +67,15 @@ Mods, set bonuses, exotic armor, and exotic class item perks.
 
 ## Artifact
 
-The current artifact's perk columns.
+One file per selectable artifact. Only one artifact can be equipped at a time, so every artifact perk in a build must come from a single file here.
 
-- `artifact-perks.md` — The current artifact's perk columns, including champion-stun and element-specific perks. (147 entries, 38 KB)
+- `artifact-perks/encrypted-data-disk-renegades.md` — Encrypted Data Disk (Renegades). Perks for this artifact only. (21 entries, 6 KB)
+- `artifact-perks/implement-of-curiosity-reclamation.md` — Implement of Curiosity (Reclamation). Perks for this artifact only. (21 entries, 6 KB)
+- `artifact-perks/tablet-of-ruin-heresy.md` — Tablet of Ruin (Heresy). Perks for this artifact only. (21 entries, 6 KB)
+- `artifact-perks/slayer-baron-apothecary-satchel-revenant.md` — Slayer Baron Apothecary Satchel (Revenant). Perks for this artifact only. (21 entries, 6 KB)
+- `artifact-perks/hunter-s-journal-echoes.md` — Hunter's Journal (Echoes). Perks for this artifact only. (21 entries, 5 KB)
+- `artifact-perks/queensfoil-censer-wish.md` — Queensfoil Censer (Wish). Perks for this artifact only. (21 entries, 5 KB)
+- `artifact-perks/npa-repulsion-regulator-deep.md` — NPA Repulsion Regulator (Deep). Perks for this artifact only. (21 entries, 4 KB)
 
 ## Mechanics
 
@@ -82,6 +89,7 @@ Stat tiers, ability energy, Armor Charge, champions, and combatant data.
 Superseded data kept for older seasons and artifacts. Do not quote as current.
 
 - `archive/episodic-artifact-perks.md` — Artifact perks from the Episode artifacts, still equippable from past seasons. (175 entries, 39 KB)
+  - Sections: Renegades · Edge of Fate
 - `archive/seasonal-artifact-perks.md` — Artifact perks from seasons 15 through 23. (126 entries, 21 KB)
   - Sections: Season of the Wish (S23) · Season of The Witch (S22) · Season of The Deep (S21) · Season of Defiance (S20) · Season of the Seraph (S19)
 - `archive/nether-mechanics.md` — Mechanics specific to the Nether activity from Episode: Heresy. (47 entries, 11 KB)

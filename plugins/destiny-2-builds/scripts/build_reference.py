@@ -33,6 +33,10 @@ REFERENCES = os.path.join(PLUGIN_ROOT, "skills", "destiny-2-builds", "references
 CACHE = os.path.join(HERE, ".cache")
 CURATED = os.path.join(PLUGIN_ROOT, "curated")
 
+# Directories under references/ that the rebuild leaves alone. player-collection holds
+# the player's own DIM exports, which are not generated and are not committed.
+PRESERVE = {"player-collection"}
+
 # Hand-maintained files copied into references/ and listed in the index. They are
 # not generated from the spreadsheet, so they survive the rebuild by being copied
 # back in after it clears the directory.
@@ -554,7 +558,11 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv[1:])
 
     if os.path.isdir(REFERENCES):
-        shutil.rmtree(REFERENCES)
+        for name in os.listdir(REFERENCES):
+            if name in PRESERVE:
+                continue
+            target = os.path.join(REFERENCES, name)
+            shutil.rmtree(target) if os.path.isdir(target) else os.remove(target)
 
     manifest = []
     for sheet in SHEETS:

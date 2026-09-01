@@ -69,10 +69,12 @@ SHEETS = [
         "blurb": "2-piece and 4-piece bonuses for every armor set.",
     },
     {
-        "gid": "473308249", "tab": "Artifact Perks", "area": "Artifact", "out": "artifact-perks.md",
-        "title": "Seasonal Artifact Perks", "layout": "stacked_right",
-        "name_cols": [2, 5, 8],
-        "blurb": "The current artifact's perk columns, including champion-stun and element-specific perks.",
+        "gid": "473308249", "tab": "Artifact Perks", "area": "Artifact", "out": "artifact-perks",
+        "title": "Artifact Perks", "layout": "stacked_right",
+        "name_cols": [2, 5, 8], "section_col": 3, "split": "section",
+        "preamble": ("Only one artifact can be equipped at a time. Every artifact perk in a build "
+                     "must come from this one file."),
+        "blurb": "Perks for this artifact only.",
     },
     {
         "gid": "1934379638", "tab": "Armor Mods", "area": "Armor", "out": "armor/mods.md",
@@ -124,9 +126,14 @@ SHEETS = [
         "blurb": "Prismatic fragments, Transcendence, and the aspect/ability pool each class can mix.",
     },
     {
-        "gid": "20898389", "tab": "Exotic Class", "area": "Armor", "out": "armor/exotic-class-items.md", "start_row": 1,
+        "gid": "20898389", "tab": "Exotic Class", "area": "Armor", "out": "armor/exotic-class-items", "start_row": 1,
         "title": "Exotic Class Item Perks", "layout": "pairs", "groups": [(0, 2), (3, 5)],
-        "blurb": "Every Spirit of ... perk available on exotic class items, by class.",
+        "group_labels": ["First Perk Column", "Second Perk Column"], "split": "group",
+        "section_col": 0, "section_lone": True,
+        "preamble": ("An exotic class item rolls one perk from the first column and one from the "
+                     "second. Both perks must be legal for the class: class-agnostic, or from that "
+                     "class's own section."),
+        "blurb": "Spirit of ... perks in this column of the exotic class item, by class.",
     },
     {
         "gid": "527596209", "tab": "Class Abilities", "area": "Subclasses", "out": "class-abilities.md", "start_row": 1, "section_col": 0,
@@ -155,7 +162,7 @@ SHEETS = [
         "gid": "715236319", "area": "Archive", "tab": "OLD Episodic Artifact Perks",
         "out": "archive/episodic-artifact-perks.md",
         "title": "Archived Episodic Artifact Perks", "layout": "stacked_right",
-        "name_cols": [2, 5, 8, 11, 14],
+        "name_cols": [2, 5, 8, 11, 14], "section_col": 1,
         "blurb": "Artifact perks from the Episode artifacts, still equippable from past seasons.",
     },
     {
@@ -272,6 +279,8 @@ def parse_pairs(rows: list[list[str]], sheet: dict) -> list[list[Section]]:
                 continue
             if section_col is not None:
                 banner = cell(row, section_col)
+                if sheet.get("section_lone") and not is_lone(row, section_col):
+                    banner = ""
                 if banner and "\n" not in banner and len(banner) < 40:
                     prefix = banner
                     sections.append(Section(prefix))
@@ -312,7 +321,17 @@ def parse_pairs(rows: list[list[str]], sheet: dict) -> list[list[Section]]:
 def parse_stacked(rows: list[list[str]], sheet: dict, below: bool) -> list[list[Section]]:
     sections = [Section("")]
     seen: set[tuple[int, int]] = set()
+    section_col = sheet.get("section_col")
     for row_index, row in enumerate(rows):
+        if section_col is not None:
+            banner = cell(row, section_col)
+            if banner and is_lone(row, section_col):
+                if ("\n" not in banner and len(banner) <= 60
+                        and not set("|⯁") & set(banner)):
+                    sections.append(Section(banner))
+                else:
+                    sections[-1].notes.append(banner)
+                continue
         for name_col in sheet["name_cols"]:
             if (row_index, name_col) in seen:
                 continue
@@ -441,7 +460,8 @@ AREA_NOTES = {
                    "`Ashes`, Facet of Purpose is `Purpose`."),
     "Weapons": "Perk and exotic behaviour, including exact damage and buff numbers.",
     "Armor": "Mods, set bonuses, exotic armor, and exotic class item perks.",
-    "Artifact": "The current artifact's perk columns.",
+    "Artifact": ("One file per selectable artifact. Only one artifact can be equipped at a "
+                 "time, so every artifact perk in a build must come from a single file here."),
     "Mechanics": "Stat tiers, ability energy, Armor Charge, champions, and combatant data.",
     "Archive": "Superseded data kept for older seasons and artifacts. Do not quote as current.",
 }
@@ -476,13 +496,14 @@ def build(sheet: dict, offline: bool) -> list[tuple[str, int, int, list[str], st
     per_group = parse(rows, sheet)
     written: list[tuple[str, int, int, list[str], str]] = []
     split = sheet.get("split")
+    preamble = sheet.get("preamble", "")
 
     if split == "group":
         for index, sections in enumerate(per_group):
             label = (sheet.get("group_labels") or [])[index]
             path = f"{sheet['out']}/{slugify(label)}.md"
             title = f"{sheet['title']} — {label}"
-            written.append((path, write(path, render(title, sheet, sections)),
+            written.append((path, write(path, render(title, sheet, sections, preamble)),
                             sum(len(s.entries) for s in sections),
                             [s.title for s in sections if s.title],
                             f"{label}. {sheet['blurb']}"))
@@ -501,12 +522,12 @@ def build(sheet: dict, offline: bool) -> list[tuple[str, int, int, list[str], st
             plain.entries = section.entries
             plain.notes = carried + section.notes
             carried = []
-            written.append((path, write(path, render(title, sheet, [plain])),
+            written.append((path, write(path, render(title, sheet, [plain], preamble)),
                             len(section.entries), [],
                             f"{section.title}. {sheet['blurb']}"))
         return written
 
-    written.append((sheet["out"], write(sheet["out"], render(sheet["title"], sheet, flat)),
+    written.append((sheet["out"], write(sheet["out"], render(sheet["title"], sheet, flat, preamble)),
                     sum(len(s.entries) for s in flat),
                     [s.title for s in flat if s.title], sheet["blurb"]))
     return written

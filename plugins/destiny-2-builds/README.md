@@ -33,8 +33,8 @@ skills/destiny-2-builds/
     armor/mods.md                    Armor mods by slot, with energy costs
     armor/set-bonuses.md             2-piece and 4-piece armor set bonuses
     armor/exotics/<class>.md         Exotic armor by class
-    armor/exotic-class-items.md      Spirit of ... perks
-    artifact-perks.md                Current seasonal artifact
+    armor/exotic-class-items/        Spirit of ... perks, one file per perk column
+    artifact-perks/<artifact>.md     One file per selectable artifact
     mechanics.md                     Stats, ability energy, Armor Charge, champions
     archive/                         Superseded seasons and pre-rework mechanics
 ```

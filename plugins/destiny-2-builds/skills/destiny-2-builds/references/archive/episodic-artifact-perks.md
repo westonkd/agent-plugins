@@ -2,6 +2,10 @@
 
 Source: Destiny Data Compendium, `OLD Episodic Artifact Perks` tab. Numbers in `[brackets]` are Crucible/PvP values; `↑` marks enhanced perk values.
 
+Contents: Renegades · Edge of Fate
+
+## Renegades
+
 ### Anti-Barrier Hand Cannon
 
 For Hand Cannons without an intrinsic Breaker Type:
@@ -258,6 +262,11 @@ Upon firing while Godslayer Broadhead is active:
 Consumes 1 stack of Godslayer Broadheads to grant increased damage and +? Reload Speed.
 Primary = 35% increased damage to Combatants.
 Heavy = 25% increased damage to Combatants.
+
+## Edge of Fate
+
+*Looking for previous Seasonal Artifact perks?
+Head over to the OLD Artifact Perks tab.*
 
 ### Anti-Barrier Scout and Pulse
 

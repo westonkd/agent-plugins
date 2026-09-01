@@ -37,7 +37,18 @@ skills/destiny-2-builds/
     artifact-perks/<artifact>.md     One file per selectable artifact
     mechanics.md                     Stats, ability energy, Armor Charge, champions
     archive/                         Superseded seasons and pre-rework mechanics
+    player-collection/               Optional, gitignored: the player's DIM exports
 ```
+
+## Restricting builds to gear the player owns
+
+Drop a DIM collection export into
+`skills/destiny-2-builds/references/player-collection/` as `destiny-weapon.csv` and
+`destiny-armor.csv` (DIM's Settings page exports both). When those files are present
+the skill recommends only weapons and armor that appear in them, including only the
+perk rolls the player actually has. When they are absent it builds from the full
+references and mentions the export once. The directory is gitignored and survives
+`build_reference.py`.
 
 ## Progressive disclosure
 

@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "no-ai-prose",
   "description": "Makes the agent write prose without AI-telltale patterns: no em-dashes for drama, no filler openers, no transition-word inflation, no trailing offers to help. A SessionStart hook loads the rules automatically each session.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "wdrans"
   },

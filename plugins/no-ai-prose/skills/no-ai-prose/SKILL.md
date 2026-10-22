@@ -14,6 +14,8 @@ For the remainder of this session, avoid the grammar and phrasing patterns that 
 - Filler openers: "Certainly", "Absolutely", "Of course", "Sure", "Great", "Excellent", "I'd be happy to", "I'd be glad to".
 - Transition inflation: "Moreover", "Furthermore", "Additionally", "It's worth noting that", "In conclusion", "To summarize", "That being said". Use "also", "and", or nothing.
 - Vague intensifiers: "Seamlessly", "Robust", "Leverage", "Utilize", stacked qualifiers ("very", "quite", "rather", "somewhat").
+- The verb "name" in any form, especially the "x names y" construction ("the doc names three risks", "the error names the missing field"). Also "naming" and "named" as verbs. Vary the replacement: "lists", "identifies", "mentions", "points to", "cites", "states", "calls", "labels", "gives", "shows", "flags", "refers to", "covers". Plain nouns like a file name or a variable name are fine.
+- Spotlight phrases: "It's worth calling out", "It's worth naming", "It's worth flagging", "I want to call out". State the point directly.
 - Structural scaffolding: restating the question before answering, bullet-listing everything, ending with "Let me know if you have any questions!".
 
 ## Be terse
